@@ -1,0 +1,222 @@
+{
+  "document_id": "contract_20250927_141009",
+  "timestamp": "2025-09-27T14:10:09.382514",
+  "is_contract": true,
+  "confidence_score": 0.95,
+  "risk_assessment": {
+    "overall_risk_score": 0.6125,
+    "risk_distribution": {"HIGH": 1, "MEDIUM": 3, "LOW": 0},
+    "high_risk_areas": ["Section_1"],
+    "compliance_gaps": [
+      "Late fee of 5% per month may exceed statutory limits in some jurisdictions",
+      "Ambiguity in the relationship between the SOW and the MSA (MSA terms not referenced in detail)",
+      "Force Majeure clause may conflict with local laws that mandate excusal of obligations in certain uncontrollable events.",
+      "Limitation of Liability and Indemnity exclusions may not be enforceable in all jurisdictions, especially regarding gross negligence or willful misconduct.",
+      "Data usage for future research and development may raise data privacy and GDPR/CCPA compliance concerns if personal data is involved.",
+      "Exclusive jurisdiction in New York may conflict with mandatory local laws if parties are outside New York or the US.",
+      "Waiver of forum non conveniens may disadvantage parties not located in New York.",
+      "The unilateral right to adjust scope and timelines may conflict with principles of mutual agreement and could be challenged if not exercised in good faith.",
+      "The amendment process is compliant (requires written, signed amendments), but the scope adjustment right may undermine the intent of requiring mutual agreement for changes."
+    ],
+    "mitigation_strategies": [
+      "Review high-risk clauses",
+      "Consult legal team",
+      "Update terms",
+      "Monitor compliance",
+      "Add clarifications"
+    ]
+  },
+  "insights": {
+    "contract_type": "Statement of Work (SOW)",
+    "key_themes": [
+      "Data analytics consulting",
+      "Dashboard development and visualization",
+      "Machine Learning model implementation",
+      "Data pipeline optimization",
+      "Ongoing technical support and system maintenance",
+      "Custom deliverables (Power BI dashboards, reports, documentation)",
+      "Intellectual property ownership",
+      "Confidentiality obligations"
+    ],
+    "critical_dates": [
+      "Effective Date: March 1, 2025",
+      "Project Kickoff: March 5, 2025",
+      "Milestone 1: March 15, 2025",
+      "Milestone 2: April 10, 2025",
+      "Milestone 3: May 20, 2025",
+      "Completion Date: June 15, 2025 (subject to extension by mutual agreement)"
+    ],
+    "financial_terms": [
+      "Total Fee: $150,000 USD",
+      "Payment Schedule: $75,000 USD upon signing, $45,000 USD upon prototype delivery, $30,000 USD upon final acceptance",
+      "Late payments beyond 15 days from due date incur a late fee of 5% per month"
+    ],
+    "jurisdiction": "Not specified in the provided excerpt; typically governed by the Master Services Agreement (MSA)",
+    "termination_clauses": [
+      "Not explicitly stated in the provided excerpt; likely governed by the Master Services Agreement (MSA)"
+    ]
+  },
+  "parties": [
+    {
+      "name": "Patrick and Fredrick Associates Inc.",
+      "role": "Client",
+      "stakes": [
+        "Receives data analytics consulting, dashboard development, ML model implementation, data pipeline optimization, and ongoing technical support",
+        "Receives custom Power BI dashboards, monthly reports, technical documentation, and regular ML model updates",
+        "Pays $150,000 USD for services"
+      ],
+      "obligations": [
+        "Pay $75,000 USD upon signing SOW",
+        "Pay $45,000 USD upon delivery of prototype",
+        "Pay $30,000 USD upon final acceptance",
+        "Pay late fee of 5% per month for payments more than 15 days overdue",
+        "Maintain confidentiality of proprietary information"
+      ],
+      "rights": [
+        "Receive deliverables as specified in SOW",
+        "Receive monthly reports and technical documentation",
+        "Request extension of completion date by mutual agreement"
+      ]
+    },
+    {
+      "name": "Hari and Winston Associates LLC",
+      "role": "Service Provider / Company",
+      "stakes": [
+        "Receives $150,000 USD for providing services",
+        "Delivers services and products to Client"
+      ],
+      "obligations": [
+        "Provide data analytics consulting, dashboard development, ML model implementation, data pipeline optimization, and ongoing technical support",
+        "Deliver custom Power BI dashboards, monthly reports, technical documentation, and regular ML model updates",
+        "Meet project milestones and timeline",
+        "Maintain confidentiality of proprietary information"
+      ],
+      "rights": [
+        "Receive payment as per schedule",
+        "Charge late fee of 5% per month for overdue payments",
+        "Retain exclusive ownership of deliverables (unless otherwise agreed in writing)",
+        "Request extension of completion date based on Neostats Analytics LLC's scheduling constraints"
+      ]
+    },
+    {
+      "name": "Neostats Analytics LLC",
+      "role": "Subcontractor / Service Provider (as referenced in Scope of Services and Timeline)",
+      "stakes": [
+        "Provides specified technical services and deliverables",
+        "Retains exclusive ownership of all deliverables unless otherwise agreed"
+      ],
+      "obligations": [
+        "Provide data analytics consulting, dashboard development, ML model implementation, data pipeline optimization, and ongoing technical support",
+        "Deliver custom Power BI dashboards, monthly reports, technical documentation, and regular ML model updates",
+        "Meet project milestones and timeline"
+      ],
+      "rights": [
+        "Retain exclusive ownership of all deliverables (software, models, documentation) unless otherwise agreed in writing",
+        "Priority in scheduling for project completion date extension"
+      ]
+    }
+  ],
+  "clause_analyses": [
+    {
+      "clause_id": "Section_0_708",
+      "section": "Section_0",
+      "content": "Statement of Work (SOW)\nThis Statement of Work (&quot;SOW&quot;) is entered into by and between Patrick and Fredrick\nAssociates Inc. (&quot;Client&quot;) and Hari and Winston Associates LLC (&quot;Service Provider&quot; or\n“Company”), effective as of March 1, 2025. This SOW is governed by the terms and\nconditions outlined in the Master Services Agreement (&quot;MSA&quot;) signed between the parties.\n1. Scope of Services\nNeostats Analytics LLC agrees to provide the following services to the Clien...",
+      "risk_level": "MEDIUM",
+      "risk_score": 0.5,
+      "ambiguity_flags": [
+        "Inconsistent naming of service provider (Neostats Analytics LLC vs. Hari and Winston Associates LLC)",
+        "No detailed acceptance criteria for deliverables",
+        "Extension of completion date prioritizes Neostats Analytics LLC's scheduling constraints, which may disadvantage the client"
+      ],
+      "compliance_issues": [
+        "Late fee of 5% per month may exceed statutory limits in some jurisdictions",
+        "Ambiguity in the relationship between the SOW and the MSA (MSA terms not referenced in detail)"
+      ],
+      "recommendations": [
+        "Clarify and correct the service provider's legal entity name throughout the SOW",
+        "Define clear acceptance criteria and process for deliverables",
+        "Specify the process and limits for project timeline extensions to ensure fairness to both parties",
+        "Review late fee provisions for compliance with applicable laws",
+        "Reference key MSA terms relevant to this SOW, especially around dispute resolution, liability, and termination"
+      ]
+    },
+    {
+      "clause_id": "Section_1_870",
+      "section": "Section_1",
+      "content": "5. Intellectual Property Rights\nAll deliverables, including but not limited to software, models, and documentation, shall\nremain the exclusive property of Neostats Analytics LLC unless otherwise agreed in writing.\n6. Confidentiality\nBoth parties agree to maintain the confidentiality of proprietary information. However,\nNeostats Analytics LLC reserves the right to use anonymized data insights for future\nresearch and development purposes.\n7. Termination Clause\n\uf0b7 The Client may terminate this agree...",
+      "risk_level": "HIGH",
+      "risk_score": 0.85,
+      "ambiguity_flags": [
+        "Force Majeure clause is highly unfavorable to Service Provider, as it does not excuse performance even in extreme events.",
+        "Intellectual Property clause is absolute unless otherwise agreed, potentially limiting Client's rights to use or modify deliverables.",
+        "Termination clause is asymmetrical, favoring Neostats Analytics LLC with shorter notice and immediate payment upon termination.",
+        "Limitation of Liability is capped and excludes consequential damages, which may not be sufficient for high-value or high-risk projects.",
+        "Confidentiality clause allows Neostats Analytics LLC to use anonymized data insights, which may be ambiguous regarding scope and data protection."
+      ],
+      "compliance_issues": [
+        "Force Majeure clause may conflict with local laws that mandate excusal of obligations in certain uncontrollable events.",
+        "Limitation of Liability and Indemnity exclusions may not be enforceable in all jurisdictions, especially regarding gross negligence or willful misconduct.",
+        "Data usage for 'future research and development' may raise data privacy and GDPR/CCPA compliance concerns if personal data is involved."
+      ],
+      "recommendations": [
+        "Revise Force Majeure clause to allow excusal or suspension of obligations for both parties during genuine force majeure events.",
+        "Negotiate more balanced termination rights, including equal notice periods and payment terms.",
+        "Clarify and potentially negotiate shared or licensed intellectual property rights for deliverables, especially if the Client's business depends on them.",
+        "Review and potentially increase the liability cap, or allow exceptions for certain types of damages (e.g., IP infringement, data breach).",
+        "Define the scope and limitations of anonymized data usage to ensure compliance with data protection laws and client expectations.",
+        "Ensure indemnity provisions are enforceable and provide adequate protection for both parties, including exceptions for gross negligence and willful misconduct."
+      ]
+    },
+    {
+      "clause_id": "Section_2_111",
+      "section": "Section_2",
+      "content": "11. Dispute Resolution Mechanism\nAny dispute, controversy, or claim arising out of or relating to this Agreement, or the breach,\ntermination, or validity thereof, shall be resolved exclusively in the state or federal courts\nlocated in New York, United States. Each party irrevocably submits to the personal\njurisdiction of such courts and waives any objection based on forum non conveniens or any\nother objection to venue.\nThis Agreement shall be governed by and construed in accordance with the laws...",
+      "risk_level": "MEDIUM",
+      "risk_score": 0.6,
+      "ambiguity_flags": [
+        "Clause is repeated, which may cause confusion about enforceability.",
+        "No mention of alternative dispute resolution (ADR) options such as mediation or arbitration."
+      ],
+      "compliance_issues": [
+        "Exclusive jurisdiction in New York may conflict with mandatory local laws if parties are outside New York or the US.",
+        "Waiver of forum non conveniens may disadvantage parties not located in New York."
+      ],
+      "recommendations": [
+        "Clarify and remove duplicate dispute resolution clauses to avoid confusion.",
+        "Consider including ADR options (e.g., mediation or arbitration) before litigation to reduce costs and time.",
+        "Assess whether exclusive New York jurisdiction is practical for all parties, especially if any are located outside New York or the US.",
+        "Review the enforceability of the attorneys’ fees provision under New York law and in other relevant jurisdictions.",
+        "Ensure all parties understand the implications of waiving objections to venue and personal jurisdiction."
+      ]
+    },
+    {
+      "clause_id": "Section_3_73",
+      "section": "Section_3",
+      "content": "In the event of any action or proceeding to enforce rights under this Agreement, the\nprevailing party shall be entitled to recover its reasonable attorneys’ fees and costs.\n12. Amendments\nAny amendments to this SOW must be made in writing and signed by authorized\nrepresentatives of both parties. Neostats Analytics LLC reserves the right to adjust the\nproject scope and timelines due to unforeseen technical complexities, with prior notice.\n13. Signatures\nFor Patrick and Fredrick Associates Inc.\nNa...",
+      "risk_level": "MEDIUM",
+      "risk_score": 0.5,
+      "ambiguity_flags": [
+        "The clause 'Neostats Analytics LLC reserves the right to adjust the project scope and timelines due to unforeseen technical complexities, with prior notice' is unilateral and lacks clear parameters for what constitutes 'unforeseen technical complexities' and what constitutes 'prior notice'.",
+        "The term 'reasonable attorneys’ fees and costs' is subjective and may lead to disputes over what is considered reasonable."
+      ],
+      "compliance_issues": [
+        "The unilateral right to adjust scope and timelines may conflict with principles of mutual agreement and could be challenged if not exercised in good faith.",
+        "The amendment process is compliant (requires written, signed amendments), but the scope adjustment right may undermine the intent of requiring mutual agreement for changes."
+      ],
+      "recommendations": [
+        "Define 'unforeseen technical complexities' more clearly, or provide examples to limit ambiguity.",
+        "Specify the process and minimum notice period for scope/timeline adjustments to ensure fairness and predictability.",
+        "Consider making scope/timeline adjustments subject to mutual agreement, or at least provide a dispute resolution mechanism specific to such changes.",
+        "Clarify what constitutes 'reasonable attorneys’ fees and costs' (e.g., by referencing prevailing market rates or capping amounts)."
+      ]
+    }
+  ],
+  "executive_summary": "Contract type: Statement of Work (SOW), Overall risk: 0.6125, High risk areas: ['Section_1']",
+  "recommendations": [
+    "Review high-risk clauses",
+    "Consult legal team",
+    "Update terms",
+    "Monitor compliance",
+    "Add clarifications"
+  ]
+}

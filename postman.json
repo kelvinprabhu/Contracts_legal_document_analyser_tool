@@ -1,0 +1,352 @@
+{
+    "info": {
+        "_postman_id": "contract-analyzer-api",
+        "name": "Contract Document Analyzer API",
+        "description": "Complete API collection for Contract Document Analyzer with multi-agent system",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "_exporter_id": "12345678"
+    },
+    "item": [
+        {
+            "name": "Health & Status",
+            "item": [
+                {
+                    "name": "Root Health Check",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                ""
+                            ]
+                        },
+                        "description": "Basic health check endpoint"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Detailed Health Check",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/health",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "health"
+                            ]
+                        },
+                        "description": "Detailed health check showing service status"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Contract Analysis",
+            "item": [
+                {
+                    "name": "Analyze Contract (Synchronous)",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"document_text\": \"SERVICE AGREEMENT\\n\\nThis Service Agreement (\\\"Agreement\\\") is entered into on January 1, 2024, between ABC Technology Solutions Inc., a Delaware corporation (\\\"Provider\\\"), and XYZ Business Corp., a New York corporation (\\\"Client\\\").\\n\\n1. SERVICES\\nProvider agrees to provide software development and maintenance services as outlined in Exhibit A attached hereto.\\n\\n2. PAYMENT TERMS\\nClient agrees to pay Provider $50,000 monthly, due on the first business day of each month. Late payments will incur a 2% penalty per month.\\n\\n3. TERM AND TERMINATION\\nThis Agreement shall commence on January 1, 2024, and continue for 12 months unless terminated earlier. Either party may terminate with 30 days written notice.\\n\\n4. INTELLECTUAL PROPERTY\\nAll work product created by Provider shall be owned by Client upon full payment. Provider retains rights to pre-existing intellectual property and general methodologies.\\n\\n5. CONFIDENTIALITY\\nBoth parties agree to maintain confidentiality of proprietary information shared during the term of this Agreement.\\n\\n6. LIMITATION OF LIABILITY\\nProvider's liability shall not exceed the total amount paid by Client in the 12 months preceding the claim.\\n\\n7. GOVERNING LAW\\nThis Agreement shall be governed by the laws of the State of New York.\",\n  \"analysis_depth\": \"standard\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/analyze",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "analyze"
+                            ]
+                        },
+                        "description": "Synchronous contract analysis - returns results immediately"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Start Async Analysis",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"document_text\": \"EMPLOYMENT CONTRACT\\n\\nThis Employment Agreement is made between Tech Innovations LLC (\\\"Company\\\") and John Smith (\\\"Employee\\\") effective March 1, 2024.\\n\\n1. POSITION AND DUTIES\\nEmployee will serve as Senior Software Engineer, reporting to the CTO. Employee agrees to devote full professional time and attention to Company's business.\\n\\n2. COMPENSATION\\nBase salary: $120,000 annually, paid bi-weekly. Annual performance bonus up to 20% of base salary based on company and individual performance.\\n\\n3. BENEFITS\\n- Health insurance (company pays 80%)\\n- 401(k) with 4% company match\\n- 20 days PTO annually\\n- Stock options: 5,000 shares vesting over 4 years\\n\\n4. CONFIDENTIALITY AND NON-COMPETE\\nEmployee agrees not to disclose confidential information and not to compete with Company for 12 months after termination within 50-mile radius.\\n\\n5. TERMINATION\\nEmployment may be terminated by either party with 2 weeks notice. Company may terminate immediately for cause.\\n\\n6. INTELLECTUAL PROPERTY\\nAll inventions and works created during employment belong to Company.\\n\\n7. DISPUTE RESOLUTION\\nDisputes resolved through binding arbitration in California.\",\n  \"analysis_depth\": \"comprehensive\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/analyze-async",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "analyze-async"
+                            ]
+                        },
+                        "description": "Start asynchronous analysis - returns document ID for tracking"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Check Analysis Status",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/status/{{document_id}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "status",
+                                "{{document_id}}"
+                            ]
+                        },
+                        "description": "Check the status of an asynchronous analysis"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Analysis Result",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/result/{{document_id}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "result",
+                                "{{document_id}}"
+                            ]
+                        },
+                        "description": "Retrieve the completed analysis result"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "File Upload",
+            "item": [
+                {
+                    "name": "Upload and Analyze File",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "file",
+                                    "type": "file",
+                                    "src": "/path/to/your/contract.txt",
+                                    "description": "Upload a .txt contract file for analysis"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/upload-analyze",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "upload-analyze"
+                            ]
+                        },
+                        "description": "Upload a contract file and analyze it directly"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Data Management",
+            "item": [
+                {
+                    "name": "Cleanup Analysis Data",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/cleanup/{{document_id}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "cleanup",
+                                "{{document_id}}"
+                            ]
+                        },
+                        "description": "Clean up stored analysis data for a specific document"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Test Cases",
+            "item": [
+                {
+                    "name": "Test - Simple Contract",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"document_text\": \"SIMPLE AGREEMENT\\n\\nParty A agrees to provide services to Party B for $1000 monthly.\\nPayment due by the 1st of each month.\\nEither party can terminate with 30 days notice.\\nGoverned by California law.\",\n  \"analysis_depth\": \"quick\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/analyze",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "analyze"
+                            ]
+                        },
+                        "description": "Test with a minimal contract"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Test - Complex Contract",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"document_text\": \"MASTER SERVICE AGREEMENT\\n\\nThis Master Service Agreement (\\\"MSA\\\") is entered into as of December 1, 2023 (\\\"Effective Date\\\") by and between TechCorp Solutions Inc., a Delaware corporation with its principal place of business at 123 Tech Street, San Francisco, CA 94102 (\\\"Service Provider\\\" or \\\"TechCorp\\\"), and GlobalBusiness Enterprises LLC, a New York limited liability company with its principal place of business at 456 Business Ave, New York, NY 10001 (\\\"Client\\\" or \\\"GlobalBusiness\\\").\\n\\nRECITALS\\nWHEREAS, Service Provider desires to provide certain technology consulting and software development services to Client;\\nWHEREAS, Client desires to engage Service Provider to provide such services;\\nNOW, THEREFORE, in consideration of the mutual covenants contained herein, the parties agree as follows:\\n\\n1. SERVICES\\n1.1 Service Provider shall provide technology consulting, custom software development, system integration, and ongoing maintenance services as detailed in individual Statements of Work (\\\"SOWs\\\") to be executed under this MSA.\\n1.2 Each SOW shall specify the scope, timeline, deliverables, and pricing for specific projects.\\n1.3 Service Provider warrants that all services will be performed in a professional and workmanlike manner.\\n\\n2. PAYMENT AND INVOICING\\n2.1 Client agrees to pay Service Provider according to the rates and terms specified in each SOW.\\n2.2 Standard rates: Senior Consultant $200/hour, Junior Consultant $125/hour, Project Manager $175/hour.\\n2.3 Invoices submitted monthly and payment due within 30 days of receipt.\\n2.4 Late payments subject to 1.5% monthly service charge.\\n2.5 Client responsible for reasonable expenses pre-approved in writing.\\n\\n3. TERM AND TERMINATION\\n3.1 This MSA shall commence on the Effective Date and continue for 24 months, automatically renewing for successive 12-month periods unless terminated.\\n3.2 Either party may terminate this MSA with 60 days written notice.\\n3.3 Either party may terminate immediately for material breach if not cured within 30 days of written notice.\\n3.4 Client may terminate individual SOWs with 15 days notice, subject to payment for work completed.\\n\\n4. INTELLECTUAL PROPERTY\\n4.1 Client retains ownership of all pre-existing intellectual property.\\n4.2 Service Provider assigns to Client all rights in custom-developed work product upon full payment.\\n4.3 Service Provider retains rights to general methodologies, know-how, and pre-existing IP.\\n4.4 Service Provider grants Client perpetual license to use any Service Provider background IP embedded in deliverables.\\n\\n5. CONFIDENTIALITY\\n5.1 Both parties acknowledge they may receive Confidential Information.\\n5.2 Confidential Information shall be protected for 5 years after disclosure.\\n5.3 Standard exceptions apply: publicly available, independently developed, etc.\\n5.4 Return or destruction of Confidential Information upon termination.\\n\\n6. DATA PROTECTION AND SECURITY\\n6.1 Service Provider shall implement appropriate technical and organizational security measures.\\n6.2 Service Provider agrees to comply with applicable data protection laws including GDPR and CCPA.\\n6.3 Data breach notification within 24 hours of discovery.\\n6.4 Client data remains property of Client at all times.\\n\\n7. WARRANTIES AND DISCLAIMERS\\n7.1 Each party warrants authority to enter this agreement.\\n7.2 Service Provider warrants services will materially conform to specifications.\\n7.3 EXCEPT AS EXPRESSLY SET FORTH HEREIN, SERVICE PROVIDER DISCLAIMS ALL WARRANTIES.\\n\\n8. LIMITATION OF LIABILITY\\n8.1 Service Provider's total liability shall not exceed the amounts paid by Client in the 12 months preceding the claim.\\n8.2 Neither party liable for indirect, special, consequential, or punitive damages.\\n8.3 Exceptions for confidentiality breaches, IP infringement, and gross negligence.\\n\\n9. INDEMNIFICATION\\n9.1 Service Provider shall indemnify Client against third-party IP infringement claims.\\n9.2 Client shall indemnify Service Provider against claims arising from Client's misuse of deliverables.\\n\\n10. GENERAL PROVISIONS\\n10.1 This agreement shall be governed by the laws of Delaware.\\n10.2 Disputes shall be resolved through binding arbitration in San Francisco, CA.\\n10.3 This MSA constitutes the entire agreement and may only be modified in writing.\\n10.4 If any provision is unenforceable, the remainder shall remain in effect.\\n10.5 Neither party may assign this agreement without prior written consent.\\n\\nIN WITNESS WHEREOF, the parties have executed this Agreement as of the Effective Date.\\n\\nTECHCORP SOLUTIONS INC.\\nBy: Sarah Johnson\\nTitle: Chief Executive Officer\\nDate: December 1, 2023\\n\\nGLOBALBUSINESS ENTERPRISES LLC\\nBy: Michael Chen\\nTitle: Chief Technology Officer\\nDate: December 1, 2023\",\n  \"analysis_depth\": \"comprehensive\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/analyze",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "analyze"
+                            ]
+                        },
+                        "description": "Test with a comprehensive master service agreement"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Test - Non-Contract Document",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"document_text\": \"COMPANY NEWSLETTER\\n\\nWelcome to our monthly newsletter!\\n\\nThis month we're excited to announce our new product launch. Our team has been working hard to deliver innovative solutions.\\n\\nUpcoming events:\\n- Team meeting on Friday\\n- Product demo next week\\n- Annual conference in March\\n\\nPlease contact HR for any questions.\",\n  \"analysis_depth\": \"standard\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/analyze",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "analyze"
+                            ]
+                        },
+                        "description": "Test with a non-contract document to verify classification"
+                    },
+                    "response": []
+                }
+            ]
+        }
+    ],
+    "event": [
+        {
+            "listen": "prerequest",
+            "script": {
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "http://localhost:8000",
+            "type": "string",
+            "description": "Base URL for the Contract Analyzer API"
+        },
+        {
+            "key": "document_id",
+            "value": "",
+            "type": "string",
+            "description": "Document ID from async analysis - set this after starting an async analysis"
+        }
+    ]
+}
